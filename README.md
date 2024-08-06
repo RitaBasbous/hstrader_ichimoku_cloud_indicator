@@ -1,4 +1,5 @@
 
+# Ichimoku Cloud indicator using both real-time and historical market data
 ![ichimoku cloud plot](img/ichimoku_live.png)
 
 This Python script visualizes the Ichimoku Cloud indicator using both real-time and historical market data. The Ichimoku Cloud is a comprehensive technical analysis tool that provides information about support and resistance levels, trend direction, and momentum in financial markets.
