@@ -1,0 +1,6 @@
+hstrader
+pandas
+plotly
+python-dotenv
+numpy
+dash
