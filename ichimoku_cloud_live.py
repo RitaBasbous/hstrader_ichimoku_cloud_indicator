@@ -25,7 +25,7 @@ secret = os.getenv('CLIENT_SECRET')
 # Initialize the HsTrader client with the client ID and secret
 client = HsTrader(id, secret)
 
-symbol = client.get_symbol('Bitcoin')
+symbol = client.get_symbol('EURUSD')
 data = client.get_market_history(symbol=symbol.id, resolution=Resolution.M1)
 
 # Create a DataFrame from the retrieved data
@@ -195,12 +195,10 @@ def update_graph_live(n):
 def run_dash():
     app.run_server(debug=False, use_reloader=False)
 
-async def start_client():
-    await client.start_async()
 
 if __name__ == '__main__':
     dash_thread = threading.Thread(target=run_dash)
     dash_thread.start()
 
     loop = asyncio.get_event_loop()
-    loop.run_until_complete(start_client())
+    loop.run_until_complete(client.start_async())

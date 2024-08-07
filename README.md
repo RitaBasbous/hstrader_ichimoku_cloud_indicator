@@ -28,74 +28,30 @@ These variables enable secure access to market data from the [HSTRADER](https://
 **Reminder:**
 Your unique `CLIENT_ID` and `CLIENT_SECRET` can be obtained from your personal account on the platform. Ensure you keep them confidential to protect your data.
 
-## Usage
+## Ichimoku Cloud Algorithm Explained
 
-1. Import the necessary modules and load your environment variables.
-2. Initialize the HsTrader client with your credentials.
-3. Retrieve the symbol for the desired asset (e.g., `Bitcoin`).
-4. Fetch historical market data at the specified resolution.
-5. Calculate the Ichimoku Cloud components based on historical data.
-6. Set up real-time data subscription to continuously update the Ichimoku Cloud indicators.
-7. Visualize the data using Plotly to create an interactive candlestick chart with Ichimoku Cloud overlays.
-### Ichimoku Cloud Components
-
-The Ichimoku Cloud consists of five main components:
+The Ichimoku Cloud is a technical analysis tool that helps traders understand market trends, support and resistance levels, and momentum. It's made up of five main components, each providing different information about the market:
 
 1. **Tenkan-sen (Conversion Line):**
-   - Calculation: (9-period high + 9-period low) / 2
-   - Purpose: Identifies short-term price momentum.
+   - **Calculation:** It takes the highest and lowest prices over the last 9 periods (days or hours, depending on your chart), adds them together, and divides by 2.
+   - **Purpose:** This line shows short-term market momentum.
 
 2. **Kijun-sen (Base Line):**
-   - Calculation: (26-period high + 26-period low) / 2
-   - Purpose: Shows medium-term price momentum.
+   - **Calculation:** Similar to the Tenkan-sen, but it looks at the last 26 periods instead of 9.
+   - **Purpose:** It indicates medium-term market momentum.
 
 3. **Senkou Span A (Leading Span A):**
-   - Calculation: (Tenkan-sen + Kijun-sen) / 2 (shifted 26 periods forward)
-   - Purpose: Forms one of the boundaries of the cloud.
+   - **Calculation:** It takes the average of the Tenkan-sen and Kijun-sen and shifts it forward by 26 periods.
+   - **Purpose:** This line forms one boundary of the cloud.
 
 4. **Senkou Span B (Leading Span B):**
-   - Calculation: (52-period high + 52-period low) / 2 (shifted 26 periods forward)
-   - Purpose: Forms the other boundary of the cloud.
+   - **Calculation:** It takes the highest and lowest prices over the last 52 periods, adds them together, divides by 2, and shifts it forward by 26 periods.
+   - **Purpose:** This line forms the other boundary of the cloud.
 
 5. **Chikou Span (Lagging Span):**
-   - Calculation: Close price shifted 26 periods back
-   - Purpose: Confirms the trend and signals potential buy/sell opportunities.
-
-### Why Use the Ichimoku Cloud?
-
-1. **Trend Identification:**
-   - Helps traders identify the direction and strength of the trend.
-
-2. **Support and Resistance:**
-   - The cloud provides potential support and resistance levels.
-
-3. **Comprehensive Indicator:**
-   - Offers a complete view of market conditions, including trend, momentum, and potential reversals.
-
-4. **Visual Clarity:**
-   - Easy to interpret and apply to various trading strategies.
-
-## Visualization
-
-The final visualization is an interactive chart that displays:
-
-- Candlestick representation of price movements.
-- Ichimoku Cloud components including Tenkan-sen, Kijun-sen, Senkou Span A, Senkou Span B, and Chikou Span.
-- Dynamic filled areas between Senkou Span A and Senkou Span B, color-coded to indicate potential buy or sell signals.
+   - **Calculation:** It simply shifts the current closing price back by 26 periods.
+   - **Purpose:** This line helps confirm trends and can signal potential buy or sell opportunities.
 
 ## Running the Script
 
-To run the script, simply execute it in your Python environment. The script initializes a Dash app to display real-time updates of the Ichimoku Cloud indicator.
-
-```python
-if __name__ == '__main__':
-    dash_thread = threading.Thread(target=run_dash)
-    dash_thread.start()
-
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(start_client())
-```
-
-## Conclusion
-
-The Ichimoku Cloud is a versatile tool for technical analysis, providing a comprehensive view of market trends and potential support/resistance levels. Its ability to offer insight into both short-term and long-term market conditions makes it a valuable asset for traders.
+To run the script, simply execute it in your Python environment. It initializes a Dash app to display real-time updates of the Ichimoku Cloud indicator, helping you make informed trading decisions based on comprehensive market analysis.
