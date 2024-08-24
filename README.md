@@ -1,7 +1,7 @@
 # Ichimoku Cloud Indicator with Python
 ![ichimoku cloud plot](img/ichimoku_live.png)
 
-This Python script visualizes the Ichimoku Cloud indicator using both real-time and historical market data. The Ichimoku Cloud is a comprehensive technical analysis tool that provides information about support and resistance levels, trend direction, and momentum in financial markets.
+This Python script visualizes the Ichimoku Cloud indicator using both real-time and historical market data.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ CLIENT_SECRET=your_client_secret
 
 These variables enable secure access to market data from the [HSTRADER](https://staging.hstrader.com/login) platform.
 
-**Reminder:**
+**Note:**
 Your unique `CLIENT_ID` and `CLIENT_SECRET` can be obtained from your personal account on the platform. Ensure you keep them confidential to protect your data.
 
 ## Ichimoku Cloud Algorithm Explained
@@ -50,7 +50,3 @@ The Ichimoku Cloud is a technical analysis tool that helps traders understand ma
 5. **Chikou Span (Lagging Span):**
    - **Calculation:** It simply shifts the current closing price back by 26 periods.
    - **Purpose:** This line helps confirm trends and can signal potential buy or sell opportunities.
-
-## Conclusion
-
-The Ichimoku Cloud is a powerful tool for technical analysis, offering traders a multi-dimensional view of the market. Its ability to provide insights into trend direction, momentum, and key support/resistance levels makes it an invaluable indicator for both novice and experienced traders.
